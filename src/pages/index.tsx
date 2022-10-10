@@ -1,6 +1,14 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import { env } from "../env/server.mjs";
 import styles from "./index.module.css";
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  console.log(env);
+  return {
+    props: {},
+  }
+}
 
 const Home: NextPage = () => {
   return (
